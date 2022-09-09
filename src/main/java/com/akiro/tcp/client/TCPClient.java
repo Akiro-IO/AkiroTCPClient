@@ -32,7 +32,7 @@ public class TCPClient {
         .setLogActivity(true);
 
     NetClient client = vertx.createNetClient(options);
-    client.connect(10000, "saas.theakiro.com", res -> {
+    client.connect(10000, "localhost", res -> {
       if (res.succeeded()) {
         System.out.println("Connected!");
         NetSocket socket = res.result();
@@ -79,7 +79,7 @@ public class TCPClient {
 
   public static void rawSocketClient() {
 
-    String hostname = "saas.theakiro.com";
+    String hostname = "localhost";
     int port = 10000;
 
     try (Socket socket = new Socket(hostname, port)) {
